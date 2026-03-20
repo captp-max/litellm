@@ -117,7 +117,7 @@ model_list:
 
   - model_name: glm-4.7
     litellm_params:
-      model: nvidia_nim/zai-org/GLM-4.7-FP8
+      model: nvidia_nim/zai-org/GLM-4.7
       api_key: os.environ/NVIDIA_NIM_API_KEY
       api_base: https://integrate.api.nvidia.com/v1
          
