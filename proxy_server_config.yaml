@@ -117,8 +117,7 @@ model_list:
 
   - model_name: glm-4.7
     litellm_params:
-      model: openai/zai-org/GLM-4.7
-      api_base: https://integrate.api.nvidia.com
+      model: nvidia_nim/zai-org/GLM-4.7
       api_key: os.environ/NVIDIA_NIM_API_KEY
          
   # provider specific wildcard routing
