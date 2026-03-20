@@ -109,6 +109,18 @@ model_list:
       model: azure/gpt-realtime-20250828-standard
       api_version: 2025-04-01-preview
 
+  - model_name: glm-5-chat   # <-- le nom que Chub verra dans sa liste de modèles
+    litellm_params:
+      model: openai/glm-5-chat   # le "openai/" est obligatoire pour forcer le mode compatible OpenAI
+      api_base: https://api.us-west-2.modal.direct/v1
+      api_key: os.environ/MODAL_API_KEY
+
+  - model_name: glm-4.7     # ← le nom que Chub verra dans sa liste de modèles
+    litellm_params:
+      model: openai/z-ai/glm4_7   # ← le préfixe natif Nvidia NIM (le plus stable)
+      api_base: https://integrate.api.nvidia.com/v1
+      api_key: os.environ/NVIDIA_NIM_API_KEY   # ← on ne met JAMAIS la clé en clair
+
 
   # provider specific wildcard routing
   - model_name: "anthropic/*"
@@ -205,7 +217,7 @@ router_settings:
   model_group_alias: {"my-special-fake-model-alias-name": "fake-openai-endpoint-3"} 
 
 general_settings: 
-  master_key: sk-1234 # [OPTIONAL] Use to enforce auth on proxy. See - https://docs.litellm.ai/docs/proxy/virtual_keys
+  master_key: os.environ/LITELLM_MASTER_KEY # [OPTIONAL] Use to enforce auth on proxy. See - https://docs.litellm.ai/docs/proxy/virtual_keys
   store_model_in_db: True
   proxy_budget_rescheduler_min_time: 60
   proxy_budget_rescheduler_max_time: 64
