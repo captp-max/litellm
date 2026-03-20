@@ -115,10 +115,11 @@ model_list:
       api_base: https://api.us-west-2.modal.direct/v1
       api_key: os.environ/MODAL_API_KEY
 
-  - model_name: glm-4.7
+  - model_name: deepseek R1
     litellm_params:
-      model: nvidia_nim/zai-org/GLM-4.7
+      model: nvidia_nim/deepseek-ai/deepseek-r1
       api_key: os.environ/NVIDIA_NIM_API_KEY
+      api_base: https://integrate.api.nvidia.com/v1
          
   # provider specific wildcard routing
   - model_name: "anthropic/*"
