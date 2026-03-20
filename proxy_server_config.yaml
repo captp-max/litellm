@@ -117,9 +117,9 @@ model_list:
 
   - model_name: glm-4.7
     litellm_params:
-     model: openai/zai-org/GLM-4.7
-     api_base: https://integrate.api.nvidia.com/v1/chat/completions  # On met l'URL COMPLETE ici
-     api_key: os.environ/NVIDIA_NIM_API_KEY
+      model: openai/zai-org/GLM-4.7
+      api_base: https://integrate.api.nvidia.com
+      api_key: os.environ/NVIDIA_NIM_API_KEY
          
   # provider specific wildcard routing
   - model_name: "anthropic/*"
