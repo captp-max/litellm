@@ -117,8 +117,7 @@ model_list:
 
   - model_name: glm-4.7     # ← le nom que Chub verra dans sa liste de modèles
     litellm_params:
-      model: openai/z-ai/glm4_7   # ← le préfixe natif Nvidia NIM (le plus stable)
-      api_base: https://integrate.api.nvidia.com/v1
+      model: nvidia_nim/zai-org/GLM-4.7   # ← le préfixe natif Nvidia NIM (le plus stable)
       api_key: os.environ/NVIDIA_NIM_API_KEY   # ← on ne met JAMAIS la clé en clair
 
 
