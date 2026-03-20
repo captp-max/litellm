@@ -120,6 +120,13 @@ model_list:
       model: nvidia_nim/zai-org/GLM-4.7
       api_key: os.environ/NVIDIA_NIM_API_KEY
       api_base: https://integrate.api.nvidia.com/v1
+
+  - model_name: glm-4.7 test
+    litellm_params:
+      model: nvidia_nim/z-ai/glm4.7
+      api_key: os.environ/NVIDIA_NIM_API_KEY
+      api_base: https://integrate.api.nvidia.com/v1
+      
          
   # provider specific wildcard routing
   - model_name: "anthropic/*"
