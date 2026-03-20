@@ -115,11 +115,11 @@ model_list:
       api_base: https://api.us-west-2.modal.direct/v1
       api_key: os.environ/MODAL_API_KEY
 
-  - model_name: glm-4.7     # ← le nom que Chub verra dans sa liste de modèles
+  - model_name: glm-4.7
     litellm_params:
-      model: nvidia_nim/zai-org/GLM-4.7   # ← le préfixe natif Nvidia NIM (le plus stable)
-      api_key: os.environ/NVIDIA_NIM_API_KEY   # ← on ne met JAMAIS la clé en clair
-
+     model: openai/zai-org/GLM-4.7
+     api_base: https://integrate.api.nvidia.com/v1
+     api_key: os.environ/NVIDIA_NIM_API_KEY
 
   # provider specific wildcard routing
   - model_name: "anthropic/*"
