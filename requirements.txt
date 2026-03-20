@@ -76,7 +76,7 @@ websockets==15.0.1 # for realtime API
 soundfile==0.12.1 # for audio file processing
 openapi-core==0.21.0 # for OpenAPI compliance tests
 pypdf>=6.7.3 # for PDF text extraction in RAG ingestion (CVE-2026-27888)
-
+prometheus_client
 ########################
 # LITELLM ENTERPRISE DEPENDENCIES
 ########################
