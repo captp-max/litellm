@@ -126,7 +126,6 @@ model_list:
       model: nvidia_nim/z-ai/glm4.7
       api_key: os.environ/NVIDIA_NIM_API_KEY
       api_base: https://integrate.api.nvidia.com/v1
-    model_info:
       supports_reasoning: true
       
          
