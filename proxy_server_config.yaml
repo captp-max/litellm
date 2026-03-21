@@ -126,9 +126,9 @@ model_list:
       model: nvidia_nim/z-ai/glm4.7
       api_key: os.environ/NVIDIA_NIM_API_KEY
       api_base: https://integrate.api.nvidia.com/v1
-      timeout: 300
       supports_reasoning: true
       merge_reasoning_content_in_response: true
+      stream_timeout: 600
       
          
   # provider specific wildcard routing
