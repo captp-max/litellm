@@ -126,6 +126,7 @@ model_list:
       model: nvidia_nim/z-ai/glm4.7
       api_key: os.environ/NVIDIA_NIM_API_KEY
       api_base: https://integrate.api.nvidia.com/v1
+      timeout: 300
       supports_reasoning: true
       merge_reasoning_content_in_response: true
       
@@ -175,8 +176,8 @@ litellm_settings:
   success_callback: ["prometheus"]
   # max_budget: 100 
   # budget_duration: 30d
-  num_retries: 1
-  request_timeout: 6000
+  num_retries: 5
+  request_timeout: 600
   telemetry: False
   context_window_fallbacks: [{"gpt-3.5-turbo": ["gpt-3.5-turbo-large"]}]
   default_team_settings: 
