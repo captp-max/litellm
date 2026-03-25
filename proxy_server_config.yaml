@@ -117,9 +117,14 @@ model_list:
 
   - model_name: glm-4.7
     litellm_params:
-      model: nvidia_nim/zai-org/GLM-4.7
+      model: nvidia_nim/z-ai/glm4.7
       api_key: os.environ/NVIDIA_NIM_API_KEY
       api_base: https://integrate.api.nvidia.com/v1
+      supports_reasoning: true
+      merge_reasoning_content_in_response: true
+      stream_timeout: 600
+      max_tokens: 10000 
+     
 
   - model_name: glm-4.7 test
     litellm_params:
