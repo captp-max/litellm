@@ -133,14 +133,14 @@ model_list:
       stream_timeout: 600
       max_tokens: 10000 
 
-  - model_name: glm-4.7 test 2
+  - model_name: glm-4.7 test2
     litellm_params:
       model: nvidia_nim/z-ai/glm4.7
       api_key: os.environ/NVIDIA_NIM_API_KEY
       api_base: https://integrate.api.nvidia.com/v1
       timeout: 600
       
-   - model_name: glm-4.7 test 3
+   - model_name: glm-4.7 test3
     litellm_params:
       model: nvidia_nim/z-ai/glm4.7
       api_key: os.environ/NVIDIA_NIM_API_KEY
