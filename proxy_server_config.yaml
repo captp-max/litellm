@@ -184,7 +184,7 @@ model_list:
       api_key: os.environ/GOOGLE_API_KEY
   - model_name: gpt-4o
     litellm_params:
-      model: gpt-4ohttps://github.com/captp-max/litellm/blob/main/proxy_server_config.yaml
+      model: gpt-4o
       api_key: os.environ/OPENAI_API_KEY
 
 
