@@ -120,12 +120,9 @@ model_list:
       model: nvidia_nim/z-ai/glm4.7
       api_key: os.environ/NVIDIA_NIM_API_KEY
       api_base: https://integrate.api.nvidia.com/v1
-      supports_reasoning: true
-      merge_reasoning_content_in_response: true
       stream_timeout: 600
       max_tokens: 10000 
-     
-
+    
   - model_name: glm-4.7 test
     litellm_params:
       model: nvidia_nim/z-ai/glm4.7
@@ -134,6 +131,22 @@ model_list:
       supports_reasoning: true
       merge_reasoning_content_in_response: true
       stream_timeout: 600
+      max_tokens: 10000 
+
+  - model_name: glm-4.7 test 2
+    litellm_params:
+      model: nvidia_nim/z-ai/glm4.7
+      api_key: os.environ/NVIDIA_NIM_API_KEY
+      api_base: https://integrate.api.nvidia.com/v1
+      timeout: 600
+      
+   - model_name: glm-4.7 test 3
+    litellm_params:
+      model: nvidia_nim/z-ai/glm4.7
+      api_key: os.environ/NVIDIA_NIM_API_KEY
+      api_base: https://integrate.api.nvidia.com/v1
+      stream: true     
+     
       
          
   # provider specific wildcard routing
@@ -171,7 +184,7 @@ model_list:
       api_key: os.environ/GOOGLE_API_KEY
   - model_name: gpt-4o
     litellm_params:
-      model: gpt-4o
+      model: gpt-4ohttps://github.com/captp-max/litellm/blob/main/proxy_server_config.yaml
       api_key: os.environ/OPENAI_API_KEY
 
 
