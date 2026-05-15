@@ -1,152 +1,49 @@
 model_list:
-  - model_name: gpt-3.5-turbo-end-user-test
+  - model_name: glm-5 nvidia
     litellm_params:
-      model: gpt-3.5-turbo
-      region_name: "eu"
-    model_info:
-      id: "1"
-  - model_name: gpt-3.5-turbo-end-user-test
-    litellm_params:
-      model: openai/gpt-4.1-mini
-      api_key: os.environ/OPENAI_API_KEY # The `os.environ/` prefix tells litellm to read this from the env. See https://docs.litellm.ai/docs/simple_proxy#load-api-keys-from-vault
-  - model_name: gpt-3.5-turbo
-    litellm_params:
-      model: openai/gpt-4.1-mini
-      api_key: os.environ/OPENAI_API_KEY # The `os.environ/` prefix tells litellm to read this from the env. See https://docs.litellm.ai/docs/simple_proxy#load-api-keys-from-vault
-  - model_name: gpt-3.5-turbo-large
-    litellm_params: 
-      model: "gpt-3.5-turbo-1106"
-      api_key: os.environ/OPENAI_API_KEY
-      rpm: 480
-      timeout: 300
-      stream_timeout: 60
-  - model_name: gpt-4
-    litellm_params:
-      model: openai/gpt-4.1-mini
-      api_key: os.environ/OPENAI_API_KEY # The `os.environ/` prefix tells litellm to read this from the env. See https://docs.litellm.ai/docs/simple_proxy#load-api-keys-from-vault
-      rpm: 480
-      timeout: 300
-      stream_timeout: 60
-  - model_name: sagemaker-completion-model
-    litellm_params:
-      model: sagemaker/berri-benchmarking-Llama-2-70b-chat-hf-4
-      input_cost_per_second: 0.000420  
-  - model_name: text-embedding-ada-002
-    litellm_params: 
-      model: openai/text-embedding-ada-002
-      api_key: os.environ/OPENAI_API_KEY
-    model_info:
-      mode: embedding
-      base_model: text-embedding-ada-002
-  - model_name: dall-e-2 # dall-e-2 and dall-e-3 were deprecated 2026-05-12; alias to gpt-image-1
-    litellm_params:
-      model: openai/gpt-image-1
-  - model_name: openai-dall-e-3
-    litellm_params:
-      model: dall-e-3
-  - model_name: fake-openai-endpoint
-    litellm_params:
-      model: openai/gpt-3.5-turbo
-      api_key: fake-key
-      api_base: https://exampleopenaiendpoint-production.up.railway.app/
-  - model_name: fake-openai-endpoint-2
-    litellm_params:
-      model: openai/my-fake-model
-      api_key: my-fake-key
-      api_base: https://exampleopenaiendpoint-production.up.railway.app/
-      stream_timeout: 0.001
-      rpm: 1
-  - model_name: fake-openai-endpoint-3
-    litellm_params:
-      model: openai/my-fake-model
-      api_key: my-fake-key
-      api_base: https://exampleopenaiendpoint-production.up.railway.app/
-      stream_timeout: 0.001
-      rpm: 1000
-  - model_name: fake-openai-endpoint-4
-    litellm_params:
-      model: openai/my-fake-model
-      api_key: my-fake-key
-      api_base: https://exampleopenaiendpoint-production.up.railway.app/
-      num_retries: 50
-  - model_name: fake-openai-endpoint-3
-    litellm_params:
-      model: openai/my-fake-model-2
-      api_key: my-fake-key
-      api_base: https://exampleopenaiendpoint-production.up.railway.app/
-      stream_timeout: 0.001
-      rpm: 1000
-  - model_name: bad-model
-    litellm_params:
-      model: openai/bad-model
-      api_key: os.environ/OPENAI_API_KEY
-      api_base: https://exampleopenaiendpoint-production.up.railway.app/
-      mock_timeout: True
-      timeout: 60
-      rpm: 1000
-    model_info:
-      health_check_timeout: 1
-  - model_name: good-model
-    litellm_params:
-      model: openai/bad-model
-      api_key: os.environ/OPENAI_API_KEY
-      api_base: https://exampleopenaiendpoint-production.up.railway.app/
-      rpm: 1000
-    model_info:
-      health_check_timeout: 1
-  - model_name: "*"
-    litellm_params:
-      model: openai/*
-      api_key: os.environ/OPENAI_API_KEY
-  - model_name: realtime-v1
-    litellm_params:
-      model: azure/gpt-realtime-20250828-standard
-      api_version: "2025-08-28"
-      realtime_protocol: GA # Possible values: "GA"/ "v1", "beta" 
+      model: nvidia_nim/z-ai/glm5
+      api_key: os.environ/NVIDIA_NIM_API_KEY
+      api_base: https://integrate.api.nvidia.com/v1
+      max_tokens: 8192
+      max_completion_tokens: 8192
+      additional_drop_params:
+        - max_tokens
+        - max_completion_tokens
 
-  - model_name: realtime-beta
+  - model_name: glm-5.1 nvidia
     litellm_params:
-      model: azure/gpt-realtime-20250828-standard
-      api_version: 2025-04-01-preview
+      model: nvidia_nim/z-ai/glm5.1
+      api_key: os.environ/NVIDIA_NIM_API_KEY
+      api_base: https://integrate.api.nvidia.com/v1
+      max_tokens: 8192
+      max_completion_tokens: 8192
+      additional_drop_params:
+        - max_tokens
+        - max_completion_tokens
+        
+  - model_name: DS v4 nvidia
+    litellm_params:
+      model: nvidia_nim/deepseek-ai/deepseek-v4-pro
+      api_key: os.environ/NVIDIA_NIM_API_KEY
+      api_base: https://integrate.api.nvidia.com/v1
+      max_tokens: 8192
+      max_completion_tokens: 8192
+      additional_drop_params:
+        - max_tokens
+        - max_completion_tokens
+        
+  - model_name: Mistral
+    litellm_params:
+      model: nvidia_nim/mistralai/mistral-large-3-675b-instruct-2512
+      api_key: os.environ/NVIDIA_NIM_API_KEY
+      api_base: https://integrate.api.nvidia.com/v1
 
 
-  # provider specific wildcard routing
-  - model_name: "anthropic/*"
+  - model_name: Mistral test
     litellm_params:
-      model: "anthropic/*"
-      api_key: os.environ/ANTHROPIC_API_KEY
-  - model_name: "bedrock/*"
-    litellm_params:
-      model: "bedrock/*"
-  - model_name: "groq/*"
-    litellm_params:
-      model: "groq/*"
-      api_key: os.environ/GROQ_API_KEY
-  - model_name: mistral-embed
-    litellm_params:
-      model: mistral/mistral-embed
-  - model_name: gpt-instruct # [PROD TEST] - tests if `/health` automatically infers this to be a text completion model
-    litellm_params:
-      model: text-completion-openai/gpt-3.5-turbo-instruct
-  - model_name: fake-openai-endpoint-5
-    litellm_params:
-      model: openai/my-fake-model
-      api_key: my-fake-key
-      api_base: https://exampleopenaiendpoint-production.up.railway.app/
-      timeout: 1
-  - model_name: badly-configured-openai-endpoint
-    litellm_params:
-      model: openai/my-fake-model
-      api_key: my-fake-key
-      api_base: https://exampleopenaiendpoint-production.up.railway.appxxxx/
-  - model_name: gemini-1.5-flash
-    litellm_params:
-      model: gemini/gemini-1.5-flash
-      api_key: os.environ/GOOGLE_API_KEY
-  - model_name: gpt-4o
-    litellm_params:
-      model: gpt-4o
-      api_key: os.environ/OPENAI_API_KEY
+      model: openai/mistralai/mistral-large-3-675b-instruct-2512
+      api_key: os.environ/NVIDIA_NIM_API_KEY
+      api_base: https://integrate.api.nvidia.com/v1
 
 
 litellm_settings:
