@@ -44,6 +44,11 @@ model_list:
       model: openai/mistralai/mistral-large-3-675b-instruct-2512
       api_key: os.environ/NVIDIA_NIM_API_KEY
       api_base: https://integrate.api.nvidia.com/v1
+      additional_drop_params:
+        - name                  # ← important
+        - max_tokens
+        - max_completion_tokens
+      drop_params: True     # déjà global, mais on force au niveau modèle
 
 
 litellm_settings:
