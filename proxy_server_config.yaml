@@ -55,6 +55,7 @@ litellm_settings:
   set_verbose: True  # Uncomment this if you want to see verbose logs; not recommended in production
   modify_params: True
   drop_params: True
+  callbacks: [remove_name_hook]
   success_callback: ["prometheus"]
   # max_budget: 100 
   # budget_duration: 30d
@@ -108,8 +109,6 @@ router_settings:
   model_group_alias: {"my-special-fake-model-alias-name": "fake-openai-endpoint-3"} 
 
 general_settings: 
-  pre_call_hooks:
-    - RemoveNameHook
   master_key: os.environ/LITELLM_MASTER_KEY # [OPTIONAL] Use to enforce auth on proxy. See - https://docs.litellm.ai/docs/proxy/virtual_keys
   store_model_in_db: True
   proxy_budget_rescheduler_min_time: 60
