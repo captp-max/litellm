@@ -53,7 +53,7 @@ model_list:
 
 litellm_settings:
   callbacks: ["remove_name_plugin.remove_name_handler_instance"]
-  set_verbose: True  # Uncomment this if you want to see verbose logs; not recommended in production
+  #set_verbose: True  # Uncomment this if you want to see verbose logs; not recommended in production
   modify_params: True
   drop_params: True
   success_callback: ["prometheus"]
