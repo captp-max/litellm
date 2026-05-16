@@ -41,7 +41,7 @@ model_list:
 
   - model_name: Mistral test
     litellm_params:
-      model: openai/mistralai/mistral-large-3-675b-instruct-2512
+      model: nvidia_nim/mistralai/mistral-large-3-675b-instruct-2512
       api_key: os.environ/NVIDIA_NIM_API_KEY
       api_base: https://integrate.api.nvidia.com/v1
       additional_drop_params:
@@ -53,6 +53,7 @@ model_list:
 
 litellm_settings:
   # set_verbose: True  # Uncomment this if you want to see verbose logs; not recommended in production
+  modify_params: True
   drop_params: True
   success_callback: ["prometheus"]
   # max_budget: 100 
