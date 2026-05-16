@@ -1,1 +1,0 @@
-git+https://github.com/tauven/litellm-name-removal-plugin.git
