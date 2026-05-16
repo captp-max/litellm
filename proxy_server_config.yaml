@@ -37,6 +37,11 @@ model_list:
       model: nvidia_nim/mistralai/mistral-large-3-675b-instruct-2512
       api_key: os.environ/NVIDIA_NIM_API_KEY
       api_base: https://integrate.api.nvidia.com/v1
+      max_tokens: 8192
+      max_completion_tokens: 8192
+      additional_drop_params:
+        - max_tokens
+        - max_completion_tokens
 
 
   - model_name: Mistral test
@@ -54,7 +59,7 @@ model_list:
 litellm_settings:
   callbacks: ["remove_name_plugin.remove_name_handler_instance"]
   #set_verbose: True  # Uncomment this if you want to see verbose logs; not recommended in production
-  modify_params: True
+  #modify_params: True
   drop_params: True
   success_callback: ["prometheus"]
   # max_budget: 100 
