@@ -52,7 +52,7 @@ model_list:
 
 
 litellm_settings:
-  # set_verbose: True  # Uncomment this if you want to see verbose logs; not recommended in production
+  set_verbose: True  # Uncomment this if you want to see verbose logs; not recommended in production
   modify_params: True
   drop_params: True
   success_callback: ["prometheus"]
@@ -80,7 +80,9 @@ litellm_settings:
   #   type: redis
   #   host: localhost
   #   port: 6379
-
+plugins:
+  - module: litellm_name_removal_plugin
+    remove_from_all_messages: true
 # For /fine_tuning/jobs endpoints
 finetune_settings:
   - custom_llm_provider: azure
