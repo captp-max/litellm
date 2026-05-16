@@ -80,9 +80,7 @@ litellm_settings:
   #   type: redis
   #   host: localhost
   #   port: 6379
-plugins:
-  - module: litellm_name_removal_plugin
-    remove_from_all_messages: true
+
 # For /fine_tuning/jobs endpoints
 finetune_settings:
   - custom_llm_provider: azure
