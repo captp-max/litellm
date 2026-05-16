@@ -55,7 +55,7 @@ litellm_settings:
   set_verbose: True  # Uncomment this if you want to see verbose logs; not recommended in production
   modify_params: True
   drop_params: True
-  callbacks: ["remove_name_hook"]
+  callbacks: ["remove_name"]
   success_callback: ["prometheus"]
   # max_budget: 100 
   # budget_duration: 30d
