@@ -44,17 +44,15 @@ model_list:
         - max_completion_tokens
 
 
-  - model_name: Mistral test
+  - model_name: Kimi
     litellm_params:
-      model: nvidia_nim/mistralai/mistral-large-3-675b-instruct-2512
+      model: nvidia_nim/moonshotai/kimi-k2.6
       api_key: os.environ/NVIDIA_NIM_API_KEY
       api_base: https://integrate.api.nvidia.com/v1
       additional_drop_params:
-        - name                  # ← important
         - max_tokens
         - max_completion_tokens
-      drop_params: True     # déjà global, mais on force au niveau modèle
-
+  
 
 litellm_settings:
   callbacks: ["remove_name_plugin.remove_name_handler_instance"]
