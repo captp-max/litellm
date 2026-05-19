@@ -182,24 +182,24 @@ litellm_settings:
   #   port: 6379
 
 # For /fine_tuning/jobs endpoints
-finetune_settings:
-  - custom_llm_provider: azure
-    api_base: os.environ/AZURE_API_BASE
-    api_key: os.environ/AZURE_API_KEY
-    api_version: "2023-03-15-preview"
-  - custom_llm_provider: openai
+#finetune_settings:
+  #- custom_llm_provider: azure
+    #api_base: os.environ/AZURE_API_BASE
+    #api_key: os.environ/AZURE_API_KEY
+    #api_version: "2023-03-15-preview"
+  #- custom_llm_provider: openai
     api_key: os.environ/OPENAI_API_KEY
 
 # for /files endpoints
-files_settings:
-  - custom_llm_provider: azure
-    api_base: os.environ/AZURE_API_BASE
-    api_key: os.environ/AZURE_API_KEY
-    api_version: "2023-03-15-preview"
-  - custom_llm_provider: openai
-    api_key: os.environ/OPENAI_API_KEY
+#files_settings:
+  #- custom_llm_provider: azure
+    #api_base: os.environ/AZURE_API_BASE
+    #api_key: os.environ/AZURE_API_KEY
+    #api_version: "2023-03-15-preview"
+  #- custom_llm_provider: openai
+    #api_key: os.environ/OPENAI_API_KEY
 
-router_settings:
+#router_settings:
   routing_strategy: usage-based-routing-v2 
   redis_host: os.environ/REDIS_HOST
   redis_password: os.environ/REDIS_PASSWORD
