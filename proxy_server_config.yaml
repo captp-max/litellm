@@ -1,6 +1,5 @@
 model_list:
 
-
   - model_name: Nemotron 3 Super
     litellm_params:
       model: nvidia/nemotron-3-super-120b-a12b
@@ -188,9 +187,9 @@ litellm_settings:
     #api_key: os.environ/AZURE_API_KEY
     #api_version: "2023-03-15-preview"
   #- custom_llm_provider: openai
-    api_key: os.environ/OPENAI_API_KEY
+    #api_key: os.environ/OPENAI_API_KEY
 
-# for /files endpoints
+ #for /files endpoints
 #files_settings:
   #- custom_llm_provider: azure
     #api_base: os.environ/AZURE_API_BASE
@@ -199,7 +198,7 @@ litellm_settings:
   #- custom_llm_provider: openai
     #api_key: os.environ/OPENAI_API_KEY
 
-#router_settings:
+router_settings:
   routing_strategy: usage-based-routing-v2 
   redis_host: os.environ/REDIS_HOST
   redis_password: os.environ/REDIS_PASSWORD
