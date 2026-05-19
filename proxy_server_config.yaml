@@ -1,7 +1,7 @@
 model_list:
-  - model_name: glm-5 nvidia
+  - model_name: Nemotron 3 Super
     litellm_params:
-      model: nvidia_nim/z-ai/glm5
+      model: nvidia/nemotron-3-super-120b-a12b
       api_key: os.environ/NVIDIA_NIM_API_KEY
       api_base: https://integrate.api.nvidia.com/v1
       max_tokens: 8192
@@ -9,6 +9,74 @@ model_list:
       additional_drop_params:
         - max_tokens
         - max_completion_tokens
+
+  - model_name: Nemotron 3.1 Ultra
+    litellm_params:
+      model: nvidia/llama-3.1-nemotron-ultra-253b-v1
+      api_key: os.environ/NVIDIA_NIM_API_KEY
+      api_base: https://integrate.api.nvidia.com/v1
+      max_tokens: 8192
+      max_completion_tokens: 8192
+      additional_drop_params:
+        - max_tokens
+        - max_completion_tokens
+        
+  - model_name: Nemotron 4 Instruct
+    litellm_params:
+      model: nvidia/nemotron-4-340b-instruct
+      api_key: os.environ/NVIDIA_NIM_API_KEY
+      api_base: https://integrate.api.nvidia.com/v1
+      max_tokens: 8192
+      max_completion_tokens: 8192
+      additional_drop_params:
+        - max_tokens
+        - max_completion_tokens
+
+  - model_name: Step 3.5 
+    litellm_params:
+      model: stepfun-ai/step-3.5-flash
+      api_key: os.environ/NVIDIA_NIM_API_KEY
+      api_base: https://integrate.api.nvidia.com/v1
+      max_tokens: 8192
+      max_completion_tokens: 8192
+      additional_drop_params:
+        - max_tokens
+        - max_completion_tokens
+
+  - model_name: Palmyra
+    litellm_params:
+      model: writer/palmyra-creative-122b
+      api_key: os.environ/NVIDIA_NIM_API_KEY
+      api_base: https://integrate.api.nvidia.com/v1
+      max_tokens: 8192
+      max_completion_tokens: 8192
+      additional_drop_params:
+        - max_tokens
+        - max_completion_tokens
+
+  - model_name: Qwen 3.5
+    litellm_params:
+      model: qwen/qwen3.5-397b-a17b
+      api_key: os.environ/NVIDIA_NIM_API_KEY
+      api_base: https://integrate.api.nvidia.com/v1
+      max_tokens: 8192
+      max_completion_tokens: 8192
+      additional_drop_params:
+        - max_tokens
+        - max_completion_tokens
+        
+  - model_name: GPT OSS 120B
+    litellm_params:
+      model: openai/gpt-oss-120b
+      api_key: os.environ/NVIDIA_NIM_API_KEY
+      api_base: https://integrate.api.nvidia.com/v1
+      max_tokens: 8192
+      max_completion_tokens: 8192
+      additional_drop_params:
+        - max_tokens
+        - max_completion_tokens
+
+  
 
   - model_name: glm-5.1 nvidia
     litellm_params:
@@ -21,9 +89,20 @@ model_list:
         - max_tokens
         - max_completion_tokens
         
-  - model_name: DS v4 nvidia
+  - model_name: DSv4
     litellm_params:
       model: nvidia_nim/deepseek-ai/deepseek-v4-pro
+      api_key: os.environ/NVIDIA_NIM_API_KEY
+      api_base: https://integrate.api.nvidia.com/v1
+      max_tokens: 8192
+      max_completion_tokens: 8192
+      additional_drop_params:
+        - max_tokens
+        - max_completion_tokens
+
+  - model_name: DSv4 Flash
+    litellm_params:
+      model: deepseek-ai/deepseek-v4-flash
       api_key: os.environ/NVIDIA_NIM_API_KEY
       api_base: https://integrate.api.nvidia.com/v1
       max_tokens: 8192
@@ -46,7 +125,7 @@ model_list:
 
   - model_name: Kimi
     litellm_params:
-      model: nvidia_nim/moonshotai/kimi-k2.6
+      model: moonshotai/kimi-k2.6
       api_key: os.environ/NVIDIA_NIM_API_KEY
       api_base: https://integrate.api.nvidia.com/v1
       additional_drop_params:
